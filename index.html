@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Ninja Quiz v6.21</title>
+		<link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
+		<meta name="description" content="Ninja Quiz Web App - v6.21">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link 
+			rel="stylesheet" 
+			href="./assets/icons/material-design-icons/css/materialdesignicons.min.css"
+		>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+
+		<!-- CREATED BY THE CODE NINJA -->
+
+		<!-- Start Screen -->
+		<div class="start-screen" id="start-screen">
+			<div class="wrapper">
+				<h2><img src="./assets/img/notes-clear.svg" alt="hero-img"> Ninja Quiz v6.21</h2>
+				<p>- The Next Level -</p>
+				<button id="begin-game">
+					<div class="inner">Begin <i class="mdi mdi-chevron-right"></i></div>
+				</button>
+				<br>
+				<button id="stats-home">
+					<div class="inner">Stats <i class="mdi mdi-medal"></i></div>
+				</button>
+				<p id="abstract"><i class="mdi mdi-account-heart"></i> The Code Ninja</p>
+			</div>
+		</div>
+
+		<!-- Stats Screen -->
+		<div class="stats-screen hidden" id="stats-screen">
+			<i id="return-menu" class="mdi mdi-chevron-left"> Return to Menu</i>
+			<div class="wrapper">
+				<h2 class="xls"><i class="mdi mdi-medal"></i> Score board</h2>
+				<div class="high-score">
+					<i class="mdi mdi-account-star"></i> Highest score: <span id="high-score">-</span>
+				</div>
+				<div class="scores" id="scores-regular">
+					<h2 id="empty">No scores recorded</h2>
+					<!-- JavaScript -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Rules -->
+		<div class="rules-box hidden" id="rules-box">
+			<div class="main">
+				<div class="header">
+					<h2><i class="mdi mdi-shield-check-outline"></i> Rules</h2>
+				</div>
+				<div class="body">
+					<ul>
+						<li><span>1.</span> You have only <span>30 seconds</span> for each question.</li>
+						<li><span>2.</span> Once you select your answer, it can't be undone.</li>
+						<li><span>3.</span> You can't select any option once time is up.</li>
+						<li><span>4.</span> You can't return to the main menu while you're playing.</li>
+						<li><span>5.</span> You'll get points if you give the correct answers.</li>
+						<li>
+							<span>6.</span> 
+							Bonus Points will be given if you answer the question in less than 
+							<span>15 seconds</span>
+						</li>
+					</ul>
+				</div>
+				<div class="footer">
+					<button id="reject"><i class="mdi mdi-close"></i> Reject</button>
+					<button id="accept"><i class="mdi mdi-check-all"></i> Accept</button>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</div>
+
+		<!-- Quiz Layout -->
+		<div class="quiz-layout hidden" id="quiz-layout">
+			<div class="quiz" id="quiz">
+				<header>
+					<div class="wrapper">
+						<h2><img src="./assets/img/notes-clear.svg" alt="header-img"> Ninja Quiz</h2>
+						<div class="timer-points-display">
+							<div class="timer">
+								<span id="timeText">
+									<i class="mdi mdi-clock-outline"></i> 
+									<span id="inner-timer">Time Left:</span>
+								</span>
+								<span id="countdown">15</span>
+							</div>
+							<div class="points">
+								<i class="mdi mdi-check-circle-outline"></i>
+								<span id="points-inner">0</span>
+							</div>
+						</div>
+					</div>
+				</header>
+				<main>
+					<h2 id="render-title">1. React JS is a library for- ?</h2>
+					<ul class="questions-display" id="render-questions">
+						<!-- Javascript -->
+					</ul>
+				</main>
+				<footer>
+					<div class="wrapper">
+						<p id="questions-answered">
+							<span id="current">1</span> /
+							<span id="total">20</span> Questions Answered
+						</p>
+						<button id="next-question">
+							Next <i class="mdi mdi-chevron-right"></i>
+						</button>
+						<button id="finish-quiz">
+							<i class="mdi mdi-flag"></i> Finish
+						</button>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<!-- Finished Quiz -->
+		<div class="finished-quiz-box hidden" id="finished-quiz-box">
+			<div class="wrapper">
+				<img src="./assets/img/celebrate-04.png" alt="celebrate-img">
+				<h2 class="xl">Congratulations!!</h2>
+				<p class="sm">You've finished the quiz</p>
+				<div class="stats-block">
+					<h1>Stats</h1>
+					<div class="stats-actual">
+						<div class="your-score">
+							<h2 id="final-score"></h2>
+							<p id="correct-questions"></p>
+						</div>
+						<div class="failed">
+							<h2 id="lost-points"></h2>
+							<p id="final-score-fail"></p>
+						</div>
+						<div class="score-attainable">
+							<h2>Max Score Attainable: <span id="max-score">0</span> points</h2>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<button id="stats">
+						<i class="mdi mdi-medal-outline"></i> Check the stats <i class="mdi mdi-chevron-right"></i>
+					</button>
+					<button id="main-menu">
+						<i class="mdi mdi-home"></i> Main menu
+					</button>
+				</footer>
+			</div>
+			<div class="overlay"></div>
+		</div>
+	
+		<script src="./questions/v1.js"></script>
+		<script src="./script.js" type="module"></script>
+	</body>
+</html>
